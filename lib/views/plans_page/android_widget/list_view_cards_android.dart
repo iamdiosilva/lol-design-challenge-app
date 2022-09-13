@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../controllers/format_controller.dart';
 import '../../../models/plan.dart';
 
+// ignore: must_be_immutable
 class ListViewCardsAndroid extends StatelessWidget {
   List<Plan> plans;
   ListViewCardsAndroid({Key? key, required this.plans}) : super(key: key);

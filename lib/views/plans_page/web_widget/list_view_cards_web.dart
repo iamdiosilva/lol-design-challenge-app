@@ -4,6 +4,7 @@ import '../../../common_widgets/plan_panel/plan_panel.dart';
 import '../../../controllers/format_controller.dart';
 import '../../../models/plan.dart';
 
+// ignore: must_be_immutable
 class ListViewCardsWeb extends StatelessWidget {
   List<Plan> plans;
   ListViewCardsWeb({Key? key, required this.plans}) : super(key: key);
