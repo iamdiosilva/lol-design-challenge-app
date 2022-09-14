@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../../common_widgets/end_drawer.dart/custom_end_drawer.dart';
 import '../../core/app/settings/platform_type.dart';
+import '../../core/theme/app_icons.dart';
 import '../../repositories/plans_repository.dart';
 import 'android_widget/list_view_cards_android.dart';
 import 'web_widget/list_view_cards_web.dart';
@@ -52,15 +53,25 @@ class PlansPage extends StatelessWidget {
                 (PlatformType.getPlatformType() == PlatformType.android)
                     ? Padding(
                         padding: const EdgeInsets.only(top: 16),
-                        child: ListViewCardsAndroid(
-                          plans: value.plans,
-                        ),
+                        child: (value.plans.isEmpty)
+                            ? const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: RefreshProgressIndicator(),
+                              )
+                            : ListViewCardsAndroid(
+                                plans: value.plans,
+                              ),
                       )
                     : Padding(
                         padding: const EdgeInsets.only(top: 16),
-                        child: ListViewCardsWeb(
-                          plans: value.plans,
-                        ),
+                        child: (value.plans.isEmpty)
+                            ? const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: RefreshProgressIndicator(),
+                              )
+                            : ListViewCardsWeb(
+                                plans: value.plans,
+                              ),
                       ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
@@ -82,6 +93,14 @@ class PlansPage extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(top: 24),
                   child: AdvantagePanel(),
+                ),
+                const SizedBox(height: 32),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: Image.asset(
+                    AppIcons.logo,
+                    width: 192,
+                  ),
                 ),
               ],
             ),

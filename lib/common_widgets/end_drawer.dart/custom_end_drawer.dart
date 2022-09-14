@@ -16,7 +16,7 @@ class CustomEndDrawer extends StatelessWidget {
               leading: Image.asset(
                 AppIcons.home,
                 width: 64,
-                color: Colors.grey[700],
+                color: Colors.white70,
               ),
               title: Text(
                 'Home',
@@ -33,7 +33,7 @@ class CustomEndDrawer extends StatelessWidget {
               leading: Image.asset(
                 AppIcons.plan,
                 width: 64,
-                color: Colors.grey[700],
+                color: Colors.white70,
               ),
               title: Text(
                 'Planos',
@@ -50,7 +50,7 @@ class CustomEndDrawer extends StatelessWidget {
               leading: Image.asset(
                 AppIcons.transparency,
                 width: 64,
-                color: Colors.grey[700],
+                color: Colors.white70,
               ),
               title: Text(
                 'Transparencia',
